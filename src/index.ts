@@ -1,1 +1,2 @@
-const hello:string="hello world"
+const hello :string='Hello World'
+console.log(hello);
