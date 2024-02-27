@@ -5,5 +5,7 @@
     "module": "commonjs",
     "target": "es5",
     "moduleDetection": "force"
+    // "strictFunctionTypes": false
+    // "strictNullChecks": false
   }
 }
