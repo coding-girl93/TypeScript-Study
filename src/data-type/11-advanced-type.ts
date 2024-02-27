@@ -81,3 +81,34 @@ function area(s:Shape):number{
       return ((e:never)=>{throw new Error("e")})(s)
   }
 }
+/**
+ * 索引类型
+ */
+
+let obj ={
+  a:1,
+  b:2,
+  c:3
+}
+// function getValues(obj:any,keys:string[]){
+//   return keys.map(key=>obj[key])
+// }
+// console.error(getValues(obj,["a","b","c"]))// [1,2,3]
+// console.log(getValues(obj,["d","f"]))// [undefined,undefined]
+
+// keyof T 返回T的所有属性名
+interface Obj{
+  a:number
+  b:string
+}
+let key :keyof Obj
+// T[K] 返回K的类型
+let value:Obj['a']
+// T extends U 泛型
+
+
+function getValues<T,K extends keyof T >(obj:T,keys:K[]):T[K][]{
+  return keys.map(key=>obj[key])
+}
+console.error(getValues(obj,["a","b","c"]))// [1,2,3]
+console.log(getValues(obj,["d","f"]))// 类型检查报错
