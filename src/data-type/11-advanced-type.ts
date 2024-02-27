@@ -111,4 +111,21 @@ function getValues<T,K extends keyof T >(obj:T,keys:K[]):T[K][]{
   return keys.map(key=>obj[key])
 }
 console.error(getValues(obj,["a","b","c"]))// [1,2,3]
-console.log(getValues(obj,["d","f"]))// 类型检查报错
+// console.log(getValues(obj,["d","f"]))// 类型检查报错
+
+/**
+ * 映射类型
+ * 1）Readonly<T> 返回只读类型
+ * 2) Required<T> 返回必选属性
+ * 3）Partial<T> 返回可选属性
+ * 4) Pick<T,K> 返回类型中K的属性
+ * ...
+ */
+
+interface Obj1{
+  a:number,
+  b:string,
+  c:boolean
+}
+
+type ReadonlyObj = Readonly<Obj1> // 映射出的类型都为只读属性
