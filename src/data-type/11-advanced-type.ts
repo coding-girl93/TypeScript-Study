@@ -129,3 +129,30 @@ interface Obj1{
 }
 
 type ReadonlyObj = Readonly<Obj1> // 映射出的类型都为只读属性
+
+/**
+ * 条件类型
+ * T extends U ? X : Y
+ * (A|B) extends U ? X : Y 
+ */
+
+type TypeName<T> = T extends string ? "string" : T extends number ? "number" : "object"
+
+type T1 = TypeName<string>  // "string"
+type T2 = TypeName<number>  // "number"
+type T3 = TypeName<string[]> // "object"
+
+// 利用联合类型实现类型过滤
+type Filter<T,U> = T extends U ? never : T
+type T4 = Filter<1|2|3|4,2|3> // 1|4的联合类型
+
+type NotNull<T> = Filter<T,null|undefined>
+type T5 = NotNull<string|number|undefined|null> // string|number
+
+// Exclude<T,U> 返回T中排除U的类型
+// NonNullable<T> 返回T中非null和undefined的类型
+// Extract<T,U> 返回T中包含U的类型
+type T6 = Exclude<1|2|3,2> // 1|3
+
+// ReturnType<T> 返回T的返回值类型
+type T7 = ReturnType<()=>string> // string
