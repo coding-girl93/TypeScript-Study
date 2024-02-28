@@ -7,4 +7,4 @@ namespace Shape {
 }
 
 Shape.square(10);
-Shape.circle(10);
+// Shape.circle(10);

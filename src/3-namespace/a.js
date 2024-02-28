@@ -7,4 +7,4 @@ var Shape;
     Shape.square = square;
 })(Shape || (Shape = {}));
 Shape.square(10);
-Shape.circle(10);
+// Shape.circle(10);

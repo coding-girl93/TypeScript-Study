@@ -4,7 +4,8 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5", // 
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "esModuleInterop": true
     // "strictFunctionTypes": false
     // "strictNullChecks": false
   }
