@@ -3,7 +3,7 @@
     "strict": true,                           /* Enable all strict type-checking options. */
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es5",
+    "target": "es5", // 
     "moduleDetection": "force"
     // "strictFunctionTypes": false
     // "strictNullChecks": false
